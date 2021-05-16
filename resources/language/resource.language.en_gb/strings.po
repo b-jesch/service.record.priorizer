@@ -1,0 +1,70 @@
+# XBMC Media Center language file
+# Addon Name: Recording Priorizer Service
+# Addon id: service.record.priorizer
+# Addon version: 0.0.1
+# Addon Provider: Birger Jesch
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC-Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: 2021-05-16 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgctxt "#30010"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Priorized Channel groups"
+msgstr ""
+
+msgctxt "#30012"
+msgid "Channel groups priorized for Recording first"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Priorized Channel groups"
+msgstr ""
+
+msgctxt "#30020"
+msgid "Number of connection attempts to PVR Servers"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Leading Time of Notification"
+msgstr ""
+
+msgctxt "#30025"
+msgid "15 secs"
+msgstr ""
+
+msgctxt "#30026"
+msgid "30 secs"
+msgstr ""
+
+msgctxt "#30027"
+msgid "45 secs"
+msgstr ""
+
+msgctxt "#30028"
+msgid "60 secs"
+msgstr ""
+
+msgctxt "#30050"
+msgid "Playback stopped"
+msgstr ""
+
+msgctxt "#30051"
+msgid "A high priority recording is running"
+msgstr ""
+
+msgctxt "#30100"
+msgid "No TVHeadend Server available or Server not present"
+msgstr ""

@@ -15,8 +15,10 @@ ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
 ADDON_NAME = ADDON.getAddonInfo('name')
 ADDON_VERSION = ADDON.getAddonInfo('version')
-LS = ADDON.getLocalizedString
+ADDON_PATH = ADDON.getAddonInfo('path')
 
+LS = ADDON.getLocalizedString
+ICON = os.path.join(ADDON_PATH, 'icon.png')
 # Constants
 
 STRING = 0
@@ -56,7 +58,7 @@ class CryptDecrypt(object):
             return ''
         else:
             self.__key = ''
-            for i in range((len(self.passw) / 16) + 1):
+            for i in range((len(self.passw) // 16) + 1):
                 self.__key += ('%016d' % int(random.random() * 10 ** 16))
             self.__key = self.__key[:-2] + ('%02d' % len(self.passw))
             __tpw = self.passw.ljust(len(self.__key), 'a')
@@ -79,7 +81,7 @@ class OsRelease(object):
                     for _line in _file:
                         parameter, value = _line.split('=')
                         item[parameter] = value
-            except IOError, e:
+            except IOError as e:
                 KodiLib.writeLog(e.message, xbmc.LOGERROR)
 
         self.osname = item.get('NAME', 'unknown')
@@ -101,14 +103,14 @@ class KodiLib(object):
         except Exception:
             xbmc.log('[%s %s]: %s' % (ADDON_ID, ADDON_VERSION, 'Fatal: Could not log message'), xbmc.LOGERROR)
 
-    def notify(self, header, message, icon=xbmcgui.NOTIFICATION_INFO, dispTime=5000):
-        xbmcgui.Dialog().notification(header.encode('utf-8'), message.encode('utf-8'), icon=icon, time=dispTime)
+    def notify(self, header, message, icon=ICON, dispTime=5000):
+        xbmcgui.Dialog().notification(header, message, icon=icon, time=dispTime)
 
     def jsonrpc(self, query):
         querystring = {"jsonrpc": "2.0", "id": 1}
         querystring.update(query)
         try:
-            response = json.loads(xbmc.executeJSONRPC(json.dumps(querystring, encoding='utf-8')))
+            response = json.loads(xbmc.executeJSONRPC(json.dumps(querystring)))
             if 'result' in response: return response['result']
         except TypeError as e:
             self.writeLog('Error executing JSON RPC: %s' % e, xbmc.LOGERROR)
@@ -162,7 +164,7 @@ class KlProgressBar(object):
 
         self.header = header
         self.msg = msg
-        self.timeout = 1000 * duration / steps
+        self.timeout = 1000 * duration // steps
         self.steps = 100 / steps
         self.reverse = reverse
         self.iscanceled = False

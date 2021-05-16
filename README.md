@@ -1,7 +1,7 @@
 Record Priorizer Service for TVHeadend
 
 A service for priorizing recordings on STD (Single Transponder Decryption) environments. This service priorizes recording 
-tasks over normal access (like viewing TV only) on devices, Common Interfaces or other configurations, where only single 
+tasks over normal access (like viewing TV only) on devices, Common Access Modules or other Interfaces, where only single 
 transponder decryption is available. That means this service guarantee recordings when only one encrypted transponder/channel 
 is available at same time by wiping out other clients.
 
