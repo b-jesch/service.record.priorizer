@@ -8,14 +8,17 @@ import xbmc
 import json
 import re
 import platform
+import os
 
 from contextlib import contextmanager
+
+import xbmcvfs
 
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
 ADDON_NAME = ADDON.getAddonInfo('name')
 ADDON_VERSION = ADDON.getAddonInfo('version')
-ADDON_PATH = ADDON.getAddonInfo('path')
+ADDON_PATH = xbmcvfs.translatePath(ADDON.getAddonInfo('path'))
 
 LS = ADDON.getLocalizedString
 ICON = os.path.join(ADDON_PATH, 'icon.png')
