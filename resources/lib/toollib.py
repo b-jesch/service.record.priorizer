@@ -8,6 +8,7 @@ import xbmc
 import json
 import re
 import platform
+import os
 
 from contextlib import contextmanager
 
@@ -15,7 +16,10 @@ ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
 ADDON_NAME = ADDON.getAddonInfo('name')
 ADDON_VERSION = ADDON.getAddonInfo('version')
+ADDON_PATH = xbmc.translatePath(ADDON.getAddonInfo('path'))
+
 LS = ADDON.getLocalizedString
+ICON = os.path.join(ADDON_PATH, 'icon.png')
 
 # Constants
 
@@ -101,7 +105,7 @@ class KodiLib(object):
         except Exception:
             xbmc.log('[%s %s]: %s' % (ADDON_ID, ADDON_VERSION, 'Fatal: Could not log message'), xbmc.LOGERROR)
 
-    def notify(self, header, message, icon=xbmcgui.NOTIFICATION_INFO, dispTime=5000):
+    def notify(self, header, message, icon=ICON, dispTime=5000):
         xbmcgui.Dialog().notification(header.encode('utf-8'), message.encode('utf-8'), icon=icon, time=dispTime)
 
     def jsonrpc(self, query):
