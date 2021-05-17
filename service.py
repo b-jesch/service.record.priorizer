@@ -106,8 +106,9 @@ def service(CP=None):
 
         isREC = False
         timer_id = None
+        timer_title = None
         query = {'method': 'PVR.GetTimers',
-                 'params': {'properties': ['starttime', 'startmargin', 'istimerrule', 'state', 'channelid']}}
+                 'params': {'properties': ['starttime', 'startmargin', 'istimerrule', 'state', 'channelid', 'title']}}
         response = k.jsonrpc(query)
         if response and response.get('timers', False):
             for timer in response.get('timers'):
@@ -127,7 +128,7 @@ def service(CP=None):
         # check for player activities and stop player if necessary, collect player properties
 
         if isREC:
-            props = dict()
+            props = dict({'title': timer_title})
             query = {
                 "method": "Player.GetActivePlayers",
                 }
@@ -161,7 +162,8 @@ def service(CP=None):
 
                 if response == "OK":
                     k.writeLog('Player stopped')
-                    k.notify('{} - {}'.format(ADDON_NAME, LS(30050)), LS(30051))
+                    k.notify('{} - {}'.format(ADDON_NAME, LS(30050)),
+                             '{} - {}'.format(LS(30051), props['title']))
     return
 
 

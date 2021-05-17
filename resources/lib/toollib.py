@@ -21,7 +21,7 @@ ADDON_VERSION = ADDON.getAddonInfo('version')
 ADDON_PATH = xbmcvfs.translatePath(ADDON.getAddonInfo('path'))
 
 LS = ADDON.getLocalizedString
-ICON = os.path.join(ADDON_PATH, 'icon.png')
+ICON = os.path.join(ADDON_PATH, 'resources', 'iamges', 'icon_rps_small.png')
 # Constants
 
 STRING = 0
