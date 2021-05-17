@@ -146,8 +146,7 @@ def service(CP=None):
 
                 if response:
                     props.update({'media': response['item'].get('type', None),
-                                  'channelid': response['item'].get('id', None),
-                                  'title': response['item'].get('title', None)})
+                                  'channelid': response['item'].get('id', None)})
 
                 if props['media'] != 'channel': continue
                 if props['channelid'] not in CP or props['channelid'] == timer_id: continue
