@@ -19,7 +19,7 @@ ADDON_VERSION = ADDON.getAddonInfo('version')
 ADDON_PATH = xbmc.translatePath(ADDON.getAddonInfo('path'))
 
 LS = ADDON.getLocalizedString
-ICON = os.path.join(ADDON_PATH, 'icon.png')
+ICON = os.path.join(ADDON_PATH, 'resources', 'images', 'icon_rps_small.png')
 
 # Constants
 

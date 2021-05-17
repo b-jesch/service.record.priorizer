@@ -45,7 +45,7 @@ _tvh_client = False
 
 query = {"method": "Addons.GetAddons",
          "params": {"type": "xbmc.pvrclient",
-                    "enabled": "all",
+                    "enabled": True,
                     "properties": ["name", "path", "version"]}
          }
 response = k.jsonrpc(query)
@@ -110,8 +110,9 @@ def service(CP=None):
 
         isREC = False
         timer_id = None
+        timer_title = None
         query = {'method': 'PVR.GetTimers',
-                 'params': {'properties': ['starttime', 'startmargin', 'istimerrule', 'state', 'channelid']}}
+                 'params': {'properties': ['starttime', 'startmargin', 'istimerrule', 'state', 'channelid', 'title']}}
         response = k.jsonrpc(query)
         if response and response.get('timers', False):
             for timer in response.get('timers'):
@@ -122,6 +123,7 @@ def service(CP=None):
                         margin - (timer['startmargin'] * 60) + TIME_OFFSET < int(time.time()):
                     isREC = True
                     timer_id = timer['channelid']
+                    timer_title = timer['title']
                     break
                 else:
                     pass
@@ -131,7 +133,7 @@ def service(CP=None):
         # check for player activities and stop player if necessary, collect player properties
 
         if isREC:
-            props = dict()
+            props = dict({'title': timer_title})
             query = {
                 "method": "Player.GetActivePlayers",
                 }
@@ -149,8 +151,7 @@ def service(CP=None):
 
                 if response:
                     props.update({'media': response['item'].get('type', None),
-                                  'channelid': response['item'].get('id', None),
-                                  'title': response['item'].get('title', None)})
+                                  'channelid': response['item'].get('id', None)})
 
                 if props['media'] != 'channel': continue
                 if props['channelid'] not in CP or props['channelid'] == timer_id: continue
@@ -165,7 +166,8 @@ def service(CP=None):
 
                 if response == "OK":
                     k.writeLog('Player stopped')
-                    k.notify('{} - {}'.format(ADDON_NAME, LS(30050)), LS(30051))
+                    k.notify('%s - %s' % (ADDON_NAME, LS(30050)),
+                             '%s - %s' % (LS(30051), props['title']))
     return
 
 
