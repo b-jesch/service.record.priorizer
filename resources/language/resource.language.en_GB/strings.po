@@ -41,6 +41,18 @@ msgctxt "#30021"
 msgid "Leading Time of Notification"
 msgstr ""
 
+msgctxt "#30022"
+msgid "Default Behaviour"
+msgstr ""
+
+msgctxt "#30023"
+msgid "Channel Number"
+msgstr ""
+
+msgctxt "#30024"
+msgid "Switching to"
+msgstr ""
+
 msgctxt "#30025"
 msgid "15 secs"
 msgstr ""
@@ -57,12 +69,28 @@ msgctxt "#30028"
 msgid "60 secs"
 msgstr ""
 
+msgctxt "#30030"
+msgid "Stop Playback"
+msgstr ""
+
+msgctxt "#30031"
+msgid "Switch to priorized Recording"
+msgstr ""
+
+msgctxt "#30032"
+msgid "Switch to Channel"
+msgstr ""
+
 msgctxt "#30050"
 msgid "Playback stopped"
 msgstr ""
 
 msgctxt "#30051"
 msgid "A high priority recording is running"
+msgstr ""
+
+msgctxt "#30052"
+msgid "priorized Task"
 msgstr ""
 
 msgctxt "#30100"

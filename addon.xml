@@ -9,9 +9,9 @@
     <platform>all</platform>
     <summary lang="en">Recording Priorizer Service for TVHeadend</summary>
     <summary lang="de">Recording Priorizer Service for TVHeadend</summary>
-    <description lang="en">This service priorizes recording tasks over normal access (like viewing TV only) on encrypted channels, when only single transponder decryption is available by wiping out other clients if they use encrypted channels of the same priorized channel group.</description>
-    <description lang="de">Dieser Dienst priorisiert Aufnahmetimer gegenüber normalem Zugriff (wie z.B. nur TV-Wiedergabe) auf verschlüsselten Kanälen, wenn nur 'Single Transponder Decryption' verfügbar ist, indem er in anderen Clients die Wiedergabe verschlüsselter Sender aus der gleichen priorisierten Kanalgruppe beendet.
-</description>
+    <description lang="en">This service priorizes recording tasks over normal access (like viewing TV only) on encrypted channels, when only single transponder decryption is available by wiping out or switching other clients if they use encrypted channels of the same priorized channel group.</description>
+    <description lang="de">Dieser Dienst priorisiert Aufnahmetimer gegenüber normalem Zugriff (wie z.B. nur TV-Wiedergabe) auf verschlüsselten Kanälen, wenn nur 'Single Transponder Decryption' verfügbar ist, indem er in anderen Clients die Wiedergabe verschlüsselter Sender aus der gleichen priorisierten Kanalgruppe beendet oder auf einen anderen Kanal schaltet.</description>
+    <disclaimer lang="de">Benutzung auf eigene Gefahr. Keine Haftung für nicht gesetzte Timer, nicht durchgeführte Aufnahmen und andere Seiteneffekte!</disclaimer>
     <disclaimer lang="de">Benutzung auf eigene Gefahr. Keine Haftung für nicht gesetzte Timer, nicht durchgeführte Aufnahmen und andere Seiteneffekte!</disclaimer>
     <disclaimer lang="en">Use at your own risk. No liability for not set timers, lack of recording and other side effects!</disclaimer>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>

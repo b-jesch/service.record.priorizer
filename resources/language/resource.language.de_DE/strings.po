@@ -41,6 +41,18 @@ msgctxt "#30021"
 msgid "Leading Time of Notification"
 msgstr "Vorlaufzeit für Benachrichtigung"
 
+msgctxt "#30022"
+msgid "Default Behaviour"
+msgstr "Standard Aktion"
+
+msgctxt "#30023"
+msgid "Channel Number"
+msgstr "Kanalnummer"
+
+msgctxt "#30024"
+msgid "Switching to"
+msgstr "Schalte um zu"
+
 msgctxt "#30025"
 msgid "15 secs"
 msgstr "15 Sec"
@@ -57,6 +69,18 @@ msgctxt "#30028"
 msgid "60 secs"
 msgstr "60 Sec"
 
+msgctxt "#30030"
+msgid "Stop Playback"
+msgstr "Wiedergabe anhalten"
+
+msgctxt "#30031"
+msgid "Switch to priorized Recording"
+msgstr "Zur priorisierten Aufnahme umschalten"
+
+msgctxt "#30032"
+msgid "Switch to Channel"
+msgstr "Zum Kanal schalten"
+
 msgctxt "#30050"
 msgid "Playback stopped"
 msgstr "Wiedergabe angehalten"
@@ -64,6 +88,10 @@ msgstr "Wiedergabe angehalten"
 msgctxt "#30051"
 msgid "A high priority recording is running"
 msgstr "Eine priorisierte Aufnahme läuft"
+
+msgctxt "#30052"
+msgid "priorized Task"
+msgstr "priorisierte Aufnahme"
 
 msgctxt "#30100"
 msgid "No TVHeadend Server available or Server not present"
