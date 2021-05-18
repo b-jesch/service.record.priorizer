@@ -76,6 +76,7 @@ settings = AddonSettings()
 
 _has_pvr = False
 _st = time.time()
+settings.get_settings()
 
 
 while not _has_pvr and settings.attempts > 0:
