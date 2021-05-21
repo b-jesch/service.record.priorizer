@@ -166,16 +166,20 @@ def service():
         response = k.jsonrpc(query)
         if response and response.get('timers', False):
             for timer in response.get('timers'):
-                if timer['channelid'] not in settings.priorized_ids or \
-                        timer['istimerrule'] or timer['state'] == 'disabled': continue
-                elif timer['state'] == 'recording' or \
-                        time.mktime(time.strptime(timer['starttime'], JSON_TIME_FORMAT)) - \
-                        settings.margin - (timer['startmargin'] * 60) + TIME_OFFSET < int(time.time()):
-                    isREC = True
-                    timer_id = timer['channelid']
-                    timer_title = timer['title']
-                    break
-                else:
+                # handle import error on _strptime (locked by another thread) that occurs sometimes
+                try:
+                    if timer['channelid'] not in settings.priorized_ids or \
+                            timer['istimerrule'] or timer['state'] == 'disabled': continue
+                    elif timer['state'] == 'recording' or \
+                            time.mktime(time.strptime(timer['starttime'], JSON_TIME_FORMAT)) - \
+                            settings.margin - (timer['startmargin'] * 60) + TIME_OFFSET < int(time.time()):
+                        isREC = True
+                        timer_id = timer['channelid']
+                        timer_title = timer['title']
+                        break
+                    else:
+                        pass
+                except ImportError as e:
                     continue
         else:
             continue
