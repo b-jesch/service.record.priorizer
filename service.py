@@ -170,7 +170,7 @@ def service():
                 try:
                     if timer['channelid'] not in settings.priorized_ids or \
                             timer['istimerrule'] or timer['state'] == 'disabled': continue
-                    elif timer['state'] == 'recording' or \
+                    elif timer['state'] == 'recording' and \
                             time.mktime(time.strptime(timer['starttime'], JSON_TIME_FORMAT)) - \
                             settings.margin - (timer['startmargin'] * 60) + TIME_OFFSET < int(time.time()):
                         isREC = True
